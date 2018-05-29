@@ -4,5 +4,5 @@ import me.annaisakova.mappers.dtos.CarDto;
 
 public interface CarService {
 
-    CarDto saveCarDto(CarDto carDto);
+    CarDto saveCar(CarDto carDto);
 }

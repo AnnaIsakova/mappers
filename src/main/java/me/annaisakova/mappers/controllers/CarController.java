@@ -27,7 +27,7 @@ public class CarController {
     public ResponseEntity<List<CarDto>> saveCars(@RequestBody List<CarDto> carDtos){
         List<CarDto> response = new ArrayList<>();
         for (CarDto dto:carDtos) {
-            response.add(carService.saveCarDto(dto));
+            response.add(carService.saveCar(dto));
         }
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }

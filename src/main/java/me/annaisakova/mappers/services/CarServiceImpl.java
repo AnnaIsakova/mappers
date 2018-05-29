@@ -2,6 +2,8 @@ package me.annaisakova.mappers.services;
 
 
 import me.annaisakova.mappers.dtos.CarDto;
+import me.annaisakova.mappers.entities.Car;
+import me.annaisakova.mappers.mappersConfigs.DtoConverter;
 import me.annaisakova.mappers.repositories.CarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,14 +13,17 @@ import org.springframework.stereotype.Service;
 public class CarServiceImpl implements CarService {
 
     private CarRepository carRepository;
+    private DtoConverter dtoConverter;
 
     @Autowired
-    public CarServiceImpl(CarRepository carRepository) {
+    public CarServiceImpl(CarRepository carRepository, DtoConverter dtoConverter) {
         this.carRepository = carRepository;
+        this.dtoConverter = dtoConverter;
     }
 
     @Override
-    public CarDto saveCarDto(CarDto carDto) {
-        return carDto;
+    public CarDto saveCar(CarDto carDto) {
+        Car car = carRepository.saveAndFlush(dtoConverter.fromDto(carDto));
+        return dtoConverter.toDto(car);
     }
 }
