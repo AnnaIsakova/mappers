@@ -1,4 +1,4 @@
-package me.annaisakova.mappers;
+package me.annaisakova.mappers.aspects;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
