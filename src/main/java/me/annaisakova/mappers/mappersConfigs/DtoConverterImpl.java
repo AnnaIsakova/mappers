@@ -1,6 +1,6 @@
 package me.annaisakova.mappers.mappersConfigs;
 
-import me.annaisakova.mappers.TrackTime;
+import me.annaisakova.mappers.aspects.TrackTime;
 import me.annaisakova.mappers.dtos.CarDto;
 import me.annaisakova.mappers.entities.Car;
 import org.modelmapper.ModelMapper;
