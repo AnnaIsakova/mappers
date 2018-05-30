@@ -1,5 +1,6 @@
 package me.annaisakova.mappers.mappersConfigs.dozerMapper;
 
+import me.annaisakova.mappers.aspects.TrackTime;
 import me.annaisakova.mappers.dtos.CarDto;
 import me.annaisakova.mappers.entities.Car;
 import me.annaisakova.mappers.mappersConfigs.DtoConverter;
@@ -20,11 +21,13 @@ public class DozerMapperDtoConverter implements DtoConverter {
         this.mapper = mapper;
     }
 
+    @TrackTime
     @Override
     public Car fromDto(CarDto carDto) {
         return mapper.map(carDto, Car.class);
     }
 
+    @TrackTime
     @Override
     public CarDto toDto(Car car) {
         return mapper.map(car, CarDto.class);

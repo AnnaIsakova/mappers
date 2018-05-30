@@ -23,6 +23,7 @@ public class DozerMapperCustomConverter implements CustomConverter {
         if (source == null)
             return null;
 
+        System.out.println("+++++++++++++++++++++++++++++++CONVERTER+++++++++++++++++++++++");
         if (source instanceof CarDto) {
             CarDto carDto = (CarDto) source;
             Car car = new Car();
