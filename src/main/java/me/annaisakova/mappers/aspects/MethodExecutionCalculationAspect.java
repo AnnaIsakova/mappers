@@ -20,6 +20,8 @@ public class MethodExecutionCalculationAspect {
 
         Object result = joinPoint.proceed();
 
+        logger.info("Created object: {}", result);
+
         long timeTaken = System.nanoTime() - startTime;
         logger.info("Time Taken by {} is {}", joinPoint, timeTaken);
         return result;

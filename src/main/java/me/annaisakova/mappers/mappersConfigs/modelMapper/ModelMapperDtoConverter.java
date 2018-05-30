@@ -1,8 +1,9 @@
-package me.annaisakova.mappers.mappersConfigs;
+package me.annaisakova.mappers.mappersConfigs.modelMapper;
 
 import me.annaisakova.mappers.aspects.TrackTime;
 import me.annaisakova.mappers.dtos.CarDto;
 import me.annaisakova.mappers.entities.Car;
+import me.annaisakova.mappers.mappersConfigs.DtoConverter;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -10,7 +11,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Qualifier("modelMapper")
-public class ModelMapperDtoConverterImpl implements DtoConverter {
+public class ModelMapperDtoConverter implements DtoConverter {
 
     @Autowired
     private ModelMapper mapper;
