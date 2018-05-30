@@ -6,6 +6,7 @@ import me.annaisakova.mappers.entities.Car;
 import me.annaisakova.mappers.mappersConfigs.DtoConverter;
 import me.annaisakova.mappers.repositories.CarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 
@@ -16,7 +17,7 @@ public class CarServiceImpl implements CarService {
     private DtoConverter dtoConverter;
 
     @Autowired
-    public CarServiceImpl(CarRepository carRepository, DtoConverter dtoConverter) {
+    public CarServiceImpl(CarRepository carRepository, @Qualifier("modelMapper") DtoConverter dtoConverter) {
         this.carRepository = carRepository;
         this.dtoConverter = dtoConverter;
     }

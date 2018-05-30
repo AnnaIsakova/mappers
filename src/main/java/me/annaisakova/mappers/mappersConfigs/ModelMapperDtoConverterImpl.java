@@ -5,10 +5,12 @@ import me.annaisakova.mappers.dtos.CarDto;
 import me.annaisakova.mappers.entities.Car;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
-public class DtoConverterImpl implements DtoConverter {
+@Qualifier("modelMapper")
+public class ModelMapperDtoConverterImpl implements DtoConverter {
 
     @Autowired
     private ModelMapper mapper;
