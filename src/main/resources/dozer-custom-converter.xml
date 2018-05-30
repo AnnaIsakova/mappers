@@ -7,7 +7,7 @@
         <custom-converters>
             <converter type="me.annaisakova.mappers.mappersConfigs.dozerMapper.DozerMapperCustomConverter">
                 <class-a>me.annaisakova.mappers.entities.Car</class-a>
-                <class-b>me.annaisakova.mappers.entities.CarDto</class-b>
+                <class-b>me.annaisakova.mappers.dtos.CarDto</class-b>
             </converter>
         </custom-converters>
     </configuration>

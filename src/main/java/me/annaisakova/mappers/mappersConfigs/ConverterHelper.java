@@ -17,9 +17,20 @@ public class ConverterHelper {
     private EngineRepository engineRepository;
     private WheelRepository wheelRepository;
 
+//    @Autowired
+//    public ConverterHelper(EngineRepository engineRepository, WheelRepository wheelRepository) {
+//        this.engineRepository = engineRepository;
+//        this.wheelRepository = wheelRepository;
+//    }
+
+
     @Autowired
-    public ConverterHelper(EngineRepository engineRepository, WheelRepository wheelRepository) {
+    public void setEngineRepository(EngineRepository engineRepository) {
         this.engineRepository = engineRepository;
+    }
+
+    @Autowired
+    public void setWheelRepository(WheelRepository wheelRepository) {
         this.wheelRepository = wheelRepository;
     }
 

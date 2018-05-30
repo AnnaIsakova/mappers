@@ -1,5 +1,6 @@
 package me.annaisakova.mappers.mappersConfigs.dozerMapper;
 
+import lombok.NoArgsConstructor;
 import me.annaisakova.mappers.aspects.TrackTime;
 import me.annaisakova.mappers.dtos.CarDto;
 import me.annaisakova.mappers.entities.Car;
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Qualifier("dozerMapper")
+@NoArgsConstructor
 public class DozerMapperDtoConverter implements DtoConverter {
 
     private DozerBeanMapper mapper;

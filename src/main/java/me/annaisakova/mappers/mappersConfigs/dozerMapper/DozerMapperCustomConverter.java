@@ -1,10 +1,15 @@
 package me.annaisakova.mappers.mappersConfigs.dozerMapper;
 
+import lombok.NoArgsConstructor;
 import me.annaisakova.mappers.dtos.CarDto;
 import me.annaisakova.mappers.entities.Car;
+import me.annaisakova.mappers.entities.Engine;
 import me.annaisakova.mappers.mappersConfigs.ConverterHelper;
 import org.dozer.CustomConverter;
+import org.dozer.DozerConverter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Component;
 
 
@@ -12,6 +17,9 @@ import org.springframework.stereotype.Component;
 public class DozerMapperCustomConverter implements CustomConverter {
 
     private ConverterHelper helper;
+
+    public DozerMapperCustomConverter() {
+    }
 
     @Autowired
     public DozerMapperCustomConverter(ConverterHelper helper) {
