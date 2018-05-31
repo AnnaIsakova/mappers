@@ -19,8 +19,9 @@ public class CarServiceImpl implements CarService {
     //@Qualifier("modelMapper")
     //@Qualifier("dozerMapper")
     //@Qualifier("mapStruct")
+    //@Qualifier("orikaMapper")
     @Autowired
-    public CarServiceImpl(CarRepository carRepository, @Qualifier("mapStruct") DtoConverter dtoConverter) {
+    public CarServiceImpl(CarRepository carRepository, @Qualifier("orikaMapper") DtoConverter dtoConverter) {
         this.carRepository = carRepository;
         this.dtoConverter = dtoConverter;
     }
