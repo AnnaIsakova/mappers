@@ -40,6 +40,9 @@ public class DozerMapperConfig {
         List<String> myMappingFiles = new ArrayList<>();
         myMappingFiles.add("dozer-custom-converter.xml");
         mapper.setMappingFiles(myMappingFiles);
+//        List<CustomConverter> converters = new ArrayList<>();
+//        converters.add(converter);
+//        mapper.setCustomConverters(converters);
         return mapper;
     }
 }

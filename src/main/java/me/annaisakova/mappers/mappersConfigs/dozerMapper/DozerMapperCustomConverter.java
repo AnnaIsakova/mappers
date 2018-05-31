@@ -16,14 +16,14 @@ import org.springframework.stereotype.Component;
 @Component
 public class DozerMapperCustomConverter implements CustomConverter {
 
-    private ConverterHelper helper;
+    private static ConverterHelper helper;
 
     public DozerMapperCustomConverter() {
     }
 
     @Autowired
     public DozerMapperCustomConverter(ConverterHelper helper) {
-        this.helper = helper;
+        DozerMapperCustomConverter.helper = helper;
     }
 
     @Override
@@ -31,10 +31,10 @@ public class DozerMapperCustomConverter implements CustomConverter {
         if (source == null)
             return null;
 
-        System.out.println("+++++++++++++++++++++++++++++++CONVERTER+++++++++++++++++++++++");
         if (source instanceof CarDto) {
             CarDto carDto = (CarDto) source;
             Car car = new Car();
+            car.setName(carDto.getName());
             car.setEngine(helper.findEngine(carDto.getEngineId()));
             car.setWheels(helper.findWheels(carDto.getWheelIds()));
             return car;
@@ -42,6 +42,7 @@ public class DozerMapperCustomConverter implements CustomConverter {
         } else if (source instanceof Car) {
             Car car = (Car) source;
             CarDto carDto = new CarDto();
+            carDto.setName(car.getName());
             carDto.setEngineId(car.getEngine().getId());
             carDto.setWheelIds(helper.getWheelIds(car.getWheels()));
             return carDto;
