@@ -40,6 +40,7 @@ public class ConverterHelper {
 
     public List<Wheel> findWheels(List<Integer> ids){
         List<Wheel> wheels = new ArrayList<>();
+        System.out.println("ids: " + ids);
         for (Integer id:ids) {
             wheels.add(wheelRepository.getOne(id));
         }
