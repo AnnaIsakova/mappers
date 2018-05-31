@@ -1,6 +1,7 @@
 package me.annaisakova.mappers.mappersConfigs.modelMapper;
 
-import me.annaisakova.mappers.aspects.TrackTime;
+import me.annaisakova.mappers.aspects.TrackTimeFromDto;
+import me.annaisakova.mappers.aspects.TrackTimeToDto;
 import me.annaisakova.mappers.dtos.CarDto;
 import me.annaisakova.mappers.entities.Car;
 import me.annaisakova.mappers.mappersConfigs.DtoConverter;
@@ -16,12 +17,12 @@ public class ModelMapperDtoConverter implements DtoConverter {
     @Autowired
     private ModelMapper mapper;
 
-    @TrackTime
+    @TrackTimeFromDto
     public Car fromDto(CarDto carDto){
         return mapper.map(carDto, Car.class);
     }
 
-    @TrackTime
+    @TrackTimeToDto
     public CarDto toDto(Car car){
         return mapper.map(car, CarDto.class);
     }
